@@ -9,16 +9,21 @@ class c_char:
         if valor == None:
             self.valor = "NULL"
         else:
-            self.valor = valor
+            self.valor = valor.replace("<space>","\\n")
     def __str__(self):
         if self.leght == None and self.valor == "NULL":
-            return f"char {self.name};"
+            return f'char {self.name};'
         if not self.leght and self.valor == "NULL":
-            return f"char {self.name}[{self.leght}];"
+            return f'char {self.name}[{self.leght}];'
         if self.leght == None and not self.valor == "NULL":
-            return f"char {self.name} = '{self.valor[0]}';"
+            return f'char {self.name} = "{self.valor[0]}";'
         else:
-            return f"char {self.name}[{self.leght}] = '{self.valor}';"
+            return f'char {self.name}[{self.leght}] = "{self.valor}";'
+    def type(self):
+        if self.leght == None:
+            return "char"
+        else:
+            return "char*"
 
 #is type long in C
 class c_long:
@@ -50,7 +55,7 @@ class c_funt:
         parar = ""
         if not self.parar == None:
             for par in self.parar:
-                parar += f"{par[0].type()} {par[1]}"
+                parar += f"{par.type()} {par.name}"
         return f"{self.type.type()} {self.name}({parar})" + "{\n" + self.code + "\n}"
 
 
