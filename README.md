@@ -1,3 +1,3 @@
 # Cilision project
 
-> Um projeto que desenvovel um interface parao C in python!
+> Um projeto que desenvolver um interface para o C in python!
