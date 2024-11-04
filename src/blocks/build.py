@@ -1,6 +1,9 @@
 
 # builder for code C
 class C_build:
+    """
+    Cria o arquivo do codigo C onde tu e relacionado entre si!
+    """
     def __init__(self,name):
         self.name = name
         self.code = "#include <stdio.h>\n"

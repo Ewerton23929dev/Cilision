@@ -1,11 +1,11 @@
 from blocks import *
 
 data = C_build("data")
-nome = c_char("nome","ola<space>",5)
-data.add(nome)
-main = c_funt(c_int("ola"),"main")
-main.add(printf(nome))
-data.add(main)
-with open("exemple.c","w") as file:
-    print(data)
+mov = c_funt(c_int(),"main")
+
+ola = c_int("ola", 900)
+data.add(ola)
+mov.add(scanf(c_int(),ola))
+data.add(mov)
+with open("main.c","w") as file:
     file.write(str(data))
