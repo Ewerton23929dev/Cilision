@@ -70,7 +70,7 @@ class c_funt:
         if not self.parar == None:
             for par in self.parar:
                 parar += f"{par.type()} {par.name}"
-        return f"{self.type.type()} {self.name}({parar})" + "{\n" + self.code + "\n}"
+        return f"{self.type.type()} {self.name}({parar})" + "{\n" + self.code + "\nreturn 0;\n}"
 
 
 # int type C

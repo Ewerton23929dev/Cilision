@@ -2,11 +2,11 @@
 # builder for code C
 class C_build:
     """
-    Cria o arquivo do codigo C onde tu e relacionado entre si!
+    Cria o arquivo do codigo C onde e relacionado entre si!
     """
     def __init__(self,name):
         self.name = name
-        self.code = "#include <stdio.h>\n"
+        self.code = "#include <stdio.h>\n\n"
     def add(self,code):
         self.code += str(code.__str__()) + "\n"
     def include(self,lib: str):
